@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Api start_stop.props" />
+</Project>

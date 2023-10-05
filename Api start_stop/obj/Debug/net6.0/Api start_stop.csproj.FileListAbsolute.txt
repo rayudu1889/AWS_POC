@@ -1,0 +1,46 @@
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\appsettings.json
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Api start_stop.exe
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Api start_stop.deps.json
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Api start_stop.runtimeconfig.json
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Api start_stop.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Api start_stop.pdb
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\AWSSDK.Core.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\AWSSDK.EC2.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\Api start_stop.csproj.AssemblyReference.cache
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\Api start_stop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\Api start_stop.AssemblyInfoInputs.cache
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\Api start_stop.AssemblyInfo.cs
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\Api start_stop.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\Api start_stop.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\Api start_stop.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\staticwebassets\msbuild.Api start_stop.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\staticwebassets\msbuild.build.Api start_stop.props
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Api start_stop.props
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Api start_stop.props
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\scopedcss\bundle\Api start_stop.styles.css
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\Api start_stop.csproj.CopyComplete
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\Api start_stop.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\refint\Api start_stop.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\Api start_stop.pdb
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\Api start_stop.genruntimeconfig.cache
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\obj\Debug\net6.0\ref\Api start_stop.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\AWSSDK.Extensions.NETCore.Setup.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\DELL\source\repos\Api start_stop\Api start_stop\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
