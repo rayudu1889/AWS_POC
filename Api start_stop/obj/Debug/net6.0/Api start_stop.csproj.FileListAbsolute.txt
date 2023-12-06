@@ -136,3 +136,4 @@ D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\refint\Api start_stop.dll
 D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\Api start_stop.pdb
 D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\Api start_stop.genruntimeconfig.cache
 D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\ref\Api start_stop.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\AWSSDK.ComputeOptimizer.dll

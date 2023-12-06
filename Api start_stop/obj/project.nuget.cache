@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "+54pZAfs+y+k4tynwF7liOAF3ozyw0zp1XSsEotcBfxgPQJnFvQUYRpZ8bsYAtwPp00fuhfma7btsJPTktjeSA==",
+  "dgSpecHash": "mtGl5CAIucqvfL+8WeahHOZqDO71b8zR1fr9Iw3SpL3bDR+OsQAF0fUDOAhZY9Vz1syCDJMxkz+qyqQKnW7tgw==",
   "success": true,
   "projectFilePath": "D:\\Kalibr8\\AWS_POC\\Api start_stop\\Api start_stop.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\saira\\.nuget\\packages\\awssdk.core\\3.7.202.19\\awssdk.core.3.7.202.19.nupkg.sha512",
-    "C:\\Users\\saira\\.nuget\\packages\\awssdk.ec2\\3.7.218.1\\awssdk.ec2.3.7.218.1.nupkg.sha512",
-    "C:\\Users\\saira\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.7.7\\awssdk.extensions.netcore.setup.3.7.7.nupkg.sha512",
+    "C:\\Users\\saira\\.nuget\\packages\\awssdk.computeoptimizer\\3.7.301.6\\awssdk.computeoptimizer.3.7.301.6.nupkg.sha512",
+    "C:\\Users\\saira\\.nuget\\packages\\awssdk.core\\3.7.300.14\\awssdk.core.3.7.300.14.nupkg.sha512",
+    "C:\\Users\\saira\\.nuget\\packages\\awssdk.ec2\\3.7.307\\awssdk.ec2.3.7.307.nupkg.sha512",
+    "C:\\Users\\saira\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.7.300\\awssdk.extensions.netcore.setup.3.7.300.nupkg.sha512",
     "C:\\Users\\saira\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.22\\microsoft.aspnetcore.authentication.jwtbearer.6.0.22.nupkg.sha512",
     "C:\\Users\\saira\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.22\\microsoft.aspnetcore.authorization.6.0.22.nupkg.sha512",
     "C:\\Users\\saira\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.22\\microsoft.aspnetcore.metadata.6.0.22.nupkg.sha512",
