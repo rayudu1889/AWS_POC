@@ -135,7 +135,7 @@ namespace Apistart_stop.Controllers
             {
                 var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
 
-                // Define the filter for the resource group
+  
                 var resourceGroupFilter = new Filter
                 {
                     Name = "tag:ResourceGroup",
@@ -162,7 +162,7 @@ namespace Apistart_stop.Controllers
 
                 return Ok(instanceIds);
 
-                // Additional code to refresh or perform actions on these instances as needed
+               
             }
             catch (Exception ex)
             {
