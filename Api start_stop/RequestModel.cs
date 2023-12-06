@@ -6,6 +6,10 @@
          public string AWSSecretKey { get; set; }
          public string Region { get; set; }
 
+        public  string AccountId { get; set; }
+
+        public string ResourceGroup { get; set; }
+
         
     }
 }

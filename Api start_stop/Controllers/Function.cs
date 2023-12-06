@@ -97,6 +97,80 @@ namespace Apistart_stop.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpPost("refresh-vm-account")]
+        public async Task<IActionResult> RefreshVMAccountLevel([FromBody] RequestModel requestModel)
+        {
+            try
+            {
+                var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
+
+                var request = new DescribeInstancesRequest();
+                var response = await ec2Client.DescribeInstancesAsync(request);
+
+                // Assuming GetInstanceIdsAsync returns a List<string> of instance IDs
+                var instanceIds = await GetInstanceIdsAsync(ec2Client);
+
+                foreach (var reservation in response.Reservations)
+                {
+                    foreach (var instance in reservation.Instances)
+                    {
+                        // Add the InstanceId of each instance to the list
+                        instanceIds.Add(instance.InstanceId);
+                    }
+                }
+
+                return Ok(instanceIds);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error: {ex.Message}");
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("refresh-vm-resource-group")]
+        public async Task<IActionResult> RefreshVMResourceGroupLevel([FromBody] RequestModel requestModel)
+        {
+            try
+            {
+                var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
+
+                // Define the filter for the resource group
+                var resourceGroupFilter = new Filter
+                {
+                    Name = "tag:ResourceGroup",
+                    Values = new List<string> { requestModel.ResourceGroup }
+                };
+
+                var request = new DescribeInstancesRequest
+                {
+                    Filters = new List<Filter> { resourceGroupFilter }
+                };
+
+                var response = await ec2Client.DescribeInstancesAsync(request);
+
+                var instanceIds = new List<string>();
+
+                foreach (var reservation in response.Reservations)
+                {
+                    foreach (var instance in reservation.Instances)
+                    {
+
+                        instanceIds.Add(instance.InstanceId);
+                    }
+                }
+
+                return Ok(instanceIds);
+
+                // Additional code to refresh or perform actions on these instances as needed
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error: {ex.Message}");
+                return BadRequest(ex.Message);
+            }
+        }
+
 
         private static async Task<List<string>> GetInstanceIdsAsync(IAmazonEC2 ec2Client)
         {
