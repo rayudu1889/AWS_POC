@@ -9,6 +9,7 @@
         public  string AccountId { get; set; }
 
         public string ResourceGroup { get; set; }
+        public string InstanceType { get; set; }
 
         
     }

@@ -130,6 +130,104 @@ namespace Apistart_stop.Controllers
             }
         }
 
+        [HttpPost("ResizeAllInstances")]
+        public async Task<IActionResult> ResizeAllEC2Instances([FromBody] RequestModel model)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(model.Region) || string.IsNullOrEmpty(model.InstanceType) || string.IsNullOrEmpty(model.AWSAccessKey) || string.IsNullOrEmpty(model.AWSSecretKey))
+                {
+                    return BadRequest("Invalid request format or missing AWS credentials.");
+                }
+
+                await ResizeAllEC2InstancesInRegion(model.Region, model.InstanceType, model.AWSAccessKey, model.AWSSecretKey);
+                return Ok($"EC2 instances in {model.Region} resized to {model.InstanceType} successfully.");
+            }
+            catch (Exception ex)
+            {
+                // Log the error
+                return StatusCode(500, $"Error resizing EC2 instances: {ex.Message}");
+            }
+        }
+
+        private async Task ResizeAllEC2InstancesInRegion(string awsRegion, string instanceType, string awsAccessKeyId, string awsSecretAccessKey)
+        {
+            // Check the current day of the week
+            DayOfWeek currentDayOfWeek = DateTime.Now.DayOfWeek;
+
+            // Define the days when resizing is allowed (Wednesday to Friday)
+            DayOfWeek[] allowedDays = { DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday };
+
+            // Check if the current day is in the allowed days
+            if (allowedDays.Contains(currentDayOfWeek))
+            {
+                var awsCredentials = new Amazon.Runtime.BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey);
+
+                using (var ec2Client = new AmazonEC2Client(awsCredentials, RegionEndpoint.GetBySystemName(awsRegion)))
+                {
+                    var describeInstancesRequest = new DescribeInstancesRequest();
+
+                    var describeInstancesResponse = await ec2Client.DescribeInstancesAsync(describeInstancesRequest);
+
+                    foreach (var reservation in describeInstancesResponse.Reservations)
+                    {
+                        foreach (var instance in reservation.Instances)
+                        {
+                            // Check if the instance is already stopped
+                            if (instance.State.Name != "stopped")
+                            {
+                                // Stop the instance first
+                                var stopRequest = new StopInstancesRequest
+                                {
+                                    InstanceIds = new List<string> { instance.InstanceId }
+                                };
+
+                                var stopResponse = await ec2Client.StopInstancesAsync(stopRequest);
+
+                                // Wait for the instance to stop (polling)
+                                while (true)
+                                {
+                                    var describeInstanceRequest = new DescribeInstancesRequest
+                                    {
+                                        InstanceIds = new List<string> { instance.InstanceId }
+                                    };
+
+                                    var describeInstanceResponse = await ec2Client.DescribeInstancesAsync(describeInstanceRequest);
+                                    var updatedInstanceState = describeInstanceResponse.Reservations.First().Instances.First().State.Name;
+
+                                    if (updatedInstanceState == "stopped")
+                                    {
+                                        break;
+                                    }
+
+                                    // Add a delay before checking again
+                                    await Task.Delay(TimeSpan.FromSeconds(5));
+                                }
+                            }
+
+                            // Modify the instance type
+                            var modifyRequest = new ModifyInstanceAttributeRequest
+                            {
+                                InstanceId = instance.InstanceId,
+                                InstanceType = instanceType
+                            };
+
+                            var modifyResponse = await ec2Client.ModifyInstanceAttributeAsync(modifyRequest);
+
+                            // Start the instance again
+                            var startRequest = new StartInstancesRequest
+                            {
+                                InstanceIds = new List<string> { instance.InstanceId }
+                            };
+
+                            var startResponse = await ec2Client.StartInstancesAsync(startRequest);
+                        }
+                    }
+                }
+            }
+
+        }
+
         //[HttpPost("refresh-vm-resource-group")]
         //public async Task<IActionResult> RefreshVMResourceGroupLevel([FromBody] RequestModel requestModel)
         //{
