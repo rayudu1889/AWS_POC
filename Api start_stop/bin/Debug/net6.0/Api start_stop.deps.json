@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Api start_stop/1.0.0": {
         "dependencies": {
+          "AWSSDK.AutoScaling": "3.7.301.11",
           "AWSSDK.ComputeOptimizer": "3.7.301.6",
           "AWSSDK.Core": "3.7.300.14",
           "AWSSDK.EC2": "3.7.307",
@@ -22,6 +23,17 @@
         },
         "runtime": {
           "Api start_stop.dll": {}
+        }
+      },
+      "AWSSDK.AutoScaling/3.7.301.11": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.300.14"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.AutoScaling.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.301.11"
+          }
         }
       },
       "AWSSDK.ComputeOptimizer/3.7.301.6": {
@@ -654,6 +666,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AWSSDK.AutoScaling/3.7.301.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fGWioITgswIpvSzyfewsmUBBnohs1do37Y56Jr7IAmJN7FlvMe76e7aCjQWY0fLz3ScJv/BmACbrub774h+RLQ==",
+      "path": "awssdk.autoscaling/3.7.301.11",
+      "hashPath": "awssdk.autoscaling.3.7.301.11.nupkg.sha512"
     },
     "AWSSDK.ComputeOptimizer/3.7.301.6": {
       "type": "package",

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "u7Or1XbOnLPn9PT/jCV2s2SH8HHVWrhwb/wcPa/farCO4RQTrXg66/hfz/OfGiAtM+TR6ZiMNnhJI8Z5IdurFg==",
+  "dgSpecHash": "JL5dMnPYUoGBOiTHTiODo4XDN+aapge2zJ8jtWiBhO1Ufxf/SIwY+P6TEzx3VQxKgzbwTzaDjFwzPoc1Qmwz+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\saira\\OneDrive\\Documents\\Desktop\\poc\\AWS_POC\\Api start_stop\\Api start_stop.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\saira\\.nuget\\packages\\awssdk.autoscaling\\3.7.301.11\\awssdk.autoscaling.3.7.301.11.nupkg.sha512",
     "C:\\Users\\saira\\.nuget\\packages\\awssdk.computeoptimizer\\3.7.301.6\\awssdk.computeoptimizer.3.7.301.6.nupkg.sha512",
     "C:\\Users\\saira\\.nuget\\packages\\awssdk.core\\3.7.300.14\\awssdk.core.3.7.300.14.nupkg.sha512",
     "C:\\Users\\saira\\.nuget\\packages\\awssdk.ec2\\3.7.307\\awssdk.ec2.3.7.307.nupkg.sha512",

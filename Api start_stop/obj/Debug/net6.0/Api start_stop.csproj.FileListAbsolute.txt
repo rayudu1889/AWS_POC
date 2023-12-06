@@ -144,6 +144,7 @@ C:\Users\saira\OneDrive\Documents\Desktop\poc\AWS_POC\Api start_stop\bin\Debug\n
 C:\Users\saira\OneDrive\Documents\Desktop\poc\AWS_POC\Api start_stop\bin\Debug\net6.0\Api start_stop.runtimeconfig.json
 C:\Users\saira\OneDrive\Documents\Desktop\poc\AWS_POC\Api start_stop\bin\Debug\net6.0\Api start_stop.dll
 C:\Users\saira\OneDrive\Documents\Desktop\poc\AWS_POC\Api start_stop\bin\Debug\net6.0\Api start_stop.pdb
+C:\Users\saira\OneDrive\Documents\Desktop\poc\AWS_POC\Api start_stop\bin\Debug\net6.0\AWSSDK.AutoScaling.dll
 C:\Users\saira\OneDrive\Documents\Desktop\poc\AWS_POC\Api start_stop\bin\Debug\net6.0\AWSSDK.ComputeOptimizer.dll
 C:\Users\saira\OneDrive\Documents\Desktop\poc\AWS_POC\Api start_stop\bin\Debug\net6.0\AWSSDK.Core.dll
 C:\Users\saira\OneDrive\Documents\Desktop\poc\AWS_POC\Api start_stop\bin\Debug\net6.0\AWSSDK.EC2.dll

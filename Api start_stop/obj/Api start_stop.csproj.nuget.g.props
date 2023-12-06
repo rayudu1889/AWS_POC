@@ -22,5 +22,6 @@
     <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\saira\.nuget\packages\awssdk.core\3.7.300.14</PkgAWSSDK_Core>
     <PkgAWSSDK_EC2 Condition=" '$(PkgAWSSDK_EC2)' == '' ">C:\Users\saira\.nuget\packages\awssdk.ec2\3.7.307</PkgAWSSDK_EC2>
     <PkgAWSSDK_ComputeOptimizer Condition=" '$(PkgAWSSDK_ComputeOptimizer)' == '' ">C:\Users\saira\.nuget\packages\awssdk.computeoptimizer\3.7.301.6</PkgAWSSDK_ComputeOptimizer>
+    <PkgAWSSDK_AutoScaling Condition=" '$(PkgAWSSDK_AutoScaling)' == '' ">C:\Users\saira\.nuget\packages\awssdk.autoscaling\3.7.301.11</PkgAWSSDK_AutoScaling>
   </PropertyGroup>
 </Project>

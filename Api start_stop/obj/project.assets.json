@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "AWSSDK.AutoScaling/3.7.301.11": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.300.14, 4.0.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.AutoScaling.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.AutoScaling.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "AWSSDK.ComputeOptimizer/3.7.301.6": {
         "type": "package",
         "dependencies": {
@@ -1280,6 +1296,38 @@
     }
   },
   "libraries": {
+    "AWSSDK.AutoScaling/3.7.301.11": {
+      "sha512": "fGWioITgswIpvSzyfewsmUBBnohs1do37Y56Jr7IAmJN7FlvMe76e7aCjQWY0fLz3ScJv/BmACbrub774h+RLQ==",
+      "type": "package",
+      "path": "awssdk.autoscaling/3.7.301.11",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.AutoScaling.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.autoscaling.3.7.301.11.nupkg.sha512",
+        "awssdk.autoscaling.nuspec",
+        "images/AWSLogo.png",
+        "lib/net35/AWSSDK.AutoScaling.dll",
+        "lib/net35/AWSSDK.AutoScaling.pdb",
+        "lib/net35/AWSSDK.AutoScaling.xml",
+        "lib/net45/AWSSDK.AutoScaling.dll",
+        "lib/net45/AWSSDK.AutoScaling.pdb",
+        "lib/net45/AWSSDK.AutoScaling.xml",
+        "lib/net8.0/AWSSDK.AutoScaling.dll",
+        "lib/net8.0/AWSSDK.AutoScaling.pdb",
+        "lib/net8.0/AWSSDK.AutoScaling.xml",
+        "lib/netcoreapp3.1/AWSSDK.AutoScaling.dll",
+        "lib/netcoreapp3.1/AWSSDK.AutoScaling.pdb",
+        "lib/netcoreapp3.1/AWSSDK.AutoScaling.xml",
+        "lib/netstandard2.0/AWSSDK.AutoScaling.dll",
+        "lib/netstandard2.0/AWSSDK.AutoScaling.pdb",
+        "lib/netstandard2.0/AWSSDK.AutoScaling.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
     "AWSSDK.ComputeOptimizer/3.7.301.6": {
       "sha512": "pQzzv5M7BGiHdRLtahGpubsyTQjgzeEqCr7HDUwJMQlOubJpnZ4uHROHAs8yT7jpZK01wC7symdTLaM5YhWPQA==",
       "type": "package",
@@ -4108,6 +4156,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AWSSDK.AutoScaling >= 3.7.301.11",
       "AWSSDK.ComputeOptimizer >= 3.7.301.6",
       "AWSSDK.Core >= 3.7.300.14",
       "AWSSDK.EC2 >= 3.7.307",
@@ -4167,6 +4216,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "AWSSDK.AutoScaling": {
+            "target": "Package",
+            "version": "[3.7.301.11, )"
+          },
           "AWSSDK.ComputeOptimizer": {
             "target": "Package",
             "version": "[3.7.301.6, )"

@@ -46,6 +46,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AWSSDK.AutoScaling": {
+              "target": "Package",
+              "version": "[3.7.301.11, )"
+            },
             "AWSSDK.ComputeOptimizer": {
               "target": "Package",
               "version": "[3.7.301.6, )"

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc;
 using Amazon;
 using Amazon.EC2;
 using Amazon.EC2.Model;
-using Newtonsoft.Json;
-using Microsoft.AspNetCore.Http;
-using System.Threading.Tasks;
 using Amazon.ComputeOptimizer;
 using Amazon.ComputeOptimizer.Model;
+using Apistart_stop.Entity;
 
 namespace Apistart_stop.Controllers
 {
@@ -18,18 +13,21 @@ namespace Apistart_stop.Controllers
     public class EC2Controller : ControllerBase
     {
         private readonly ILogger<EC2Controller> _logger;
+       
+
 
         public EC2Controller(ILogger<EC2Controller> logger)
         {
             _logger = logger;
+           
         }
 
         [HttpPost("get-instances")]
-        public async Task<IActionResult> GetEC2Instances([FromBody] RequestModel requestModel)
+        public async Task<IActionResult> GetEC2Instances([FromQuery] string AWSAccessKey, [FromQuery] string AWSSecretKey, [FromQuery] string Region)
         {
             try
             {
-                var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
+                var ec2Client = new AmazonEC2Client(AWSAccessKey, AWSSecretKey, RegionEndpoint.GetBySystemName(Region));
 
                 var request = new DescribeInstancesRequest();
                 var response = await ec2Client.DescribeInstancesAsync(request);
@@ -50,61 +48,14 @@ namespace Apistart_stop.Controllers
             }
         }
 
-        [HttpPost("start-all-instances")]
-        public async Task<IActionResult> StartAllEC2Instances([FromBody] RequestModel requestModel)
-        {
-            try
-            {
-                var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
-
-                var instanceIds = await GetInstanceIdsAsync(ec2Client);
-
-                var request = new StartInstancesRequest
-                {
-                    InstanceIds = instanceIds
-                };
-
-                var response = await ec2Client.StartInstancesAsync(request);
-
-                return Ok(response.StartingInstances);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error: {ex.Message}");
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpPost("stop-all-instances")]
-        public async Task<IActionResult> StopAllEC2Instances([FromBody] RequestModel requestModel)
-        {
-            try
-            {
-                var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
-
-                var instanceIds = await GetInstanceIdsAsync(ec2Client);
-
-                var request = new StopInstancesRequest
-                {
-                    InstanceIds = instanceIds
-                };
-
-                var response = await ec2Client.StopInstancesAsync(request);
-
-                return Ok(response.StoppingInstances);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error: {ex.Message}");
-                return BadRequest(ex.Message);
-            }
-        }
+       
         [HttpPost("refresh-vm-account")]
-        public async Task<IActionResult> RefreshVMAccountLevel([FromBody] RequestModel requestModel)
+        public async Task<IActionResult> RefreshVMAccountLevel([FromQuery] string AWSAccessKey, [FromQuery] string AWSSecretKey, [FromQuery] string Region)
+
         {
             try
             {
-                var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
+                var ec2Client = new AmazonEC2Client(AWSAccessKey, AWSSecretKey, RegionEndpoint.GetBySystemName(Region));
 
                 var request = new DescribeInstancesRequest();
                 var response = await ec2Client.DescribeInstancesAsync(request);
@@ -130,52 +81,7 @@ namespace Apistart_stop.Controllers
             }
         }
 
-        [HttpPost("start-instance")]
-        public async Task<IActionResult> StartEC2Instance([FromBody] RequestModel requestModel)
-        {
-            try
-            {
-                var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
-
-                var request = new StartInstancesRequest
-                {
-                    InstanceIds = new List<string> { requestModel.InstanceId }
-                };
-
-                var response = await ec2Client.StartInstancesAsync(request);
-
-                return Ok(response.StartingInstances);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error: {ex.Message}");
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpPost("stop-instance")]
-        public async Task<IActionResult> StopEC2Instance([FromBody] RequestModel requestModel)
-        {
-            try
-            {
-                var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
-
-                var request = new StopInstancesRequest
-                {
-                    InstanceIds = new List<string> { requestModel.InstanceId }
-                };
-
-                var response = await ec2Client.StopInstancesAsync(request);
-
-                return Ok(response.StoppingInstances);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error: {ex.Message}");
-                return BadRequest(ex.Message);
-            }
-        }
-
+       
         [HttpPost("ResizeAllInstances")]
         public async Task<IActionResult> ResizeAllEC2Instances([FromBody] RequestModel model)
         {
@@ -319,18 +225,56 @@ namespace Apistart_stop.Controllers
         //    }
         //}
 
-        [HttpPost("refresh-vm-resource-group")]
-        public async Task<IActionResult> RefreshVMResourceGroupLevel([FromBody] RequestModel requestModel)
+        //[HttpPost("refresh-vm-resource-group")]
+        //public async Task<IActionResult> RefreshVMResourceGroupLevel([FromQuery] string AWSAccessKey, [FromQuery] string AWSSecretKey, [FromQuery] string Region, [FromQuery] string ResourceGroup)
+        //{
+        //    try
+        //    {
+        //        var ec2Client = new AmazonEC2Client(AWSAccessKey, AWSSecretKey, RegionEndpoint.GetBySystemName(Region));
+
+        //        // Use the correct Filter class from the Amazon.EC2.Model namespace
+        //        var resourceGroupFilter = new Amazon.EC2.Model.Filter
+        //        {
+        //            Name = "tag:ResourceGroup",
+        //            Values = new List<string> {ResourceGroup }
+        //        };
+
+        //        var request = new DescribeInstancesRequest
+        //        {
+        //            Filters = new List<Amazon.EC2.Model.Filter> { resourceGroupFilter }
+        //        };
+
+        //        var response = await ec2Client.DescribeInstancesAsync(request);
+
+        //        var instanceIds = new List<string>();
+
+        //        foreach (var reservation in response.Reservations)
+        //        {
+        //            foreach (var instance in reservation.Instances)
+        //            {
+        //                instanceIds.Add(instance.InstanceId);
+        //            }
+        //        }
+
+        //        return Ok(instanceIds);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError($"Error: {ex.Message}");
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
+        [HttpGet("get-vm-resource-group")]
+        public async Task<IActionResult> GetVMResourceGroupLevel([FromQuery] string AWSAccessKey, [FromQuery] string AWSSecretKey, [FromQuery] string Region, [FromQuery] string ResourceGroupName)
         {
             try
             {
-                var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
+                var ec2Client = new AmazonEC2Client(AWSAccessKey, AWSSecretKey, RegionEndpoint.GetBySystemName(Region));
 
-                // Use the correct Filter class from the Amazon.EC2.Model namespace
                 var resourceGroupFilter = new Amazon.EC2.Model.Filter
                 {
                     Name = "tag:ResourceGroup",
-                    Values = new List<string> { requestModel.ResourceGroup }
+                    Values = new List<string> { ResourceGroupName }
                 };
 
                 var request = new DescribeInstancesRequest
@@ -340,15 +284,7 @@ namespace Apistart_stop.Controllers
 
                 var response = await ec2Client.DescribeInstancesAsync(request);
 
-                var instanceIds = new List<string>();
-
-                foreach (var reservation in response.Reservations)
-                {
-                    foreach (var instance in reservation.Instances)
-                    {
-                        instanceIds.Add(instance.InstanceId);
-                    }
-                }
+                var instanceIds = response.Reservations.SelectMany(r => r.Instances.Select(i => i.InstanceId)).ToList();
 
                 return Ok(instanceIds);
             }
@@ -359,21 +295,22 @@ namespace Apistart_stop.Controllers
             }
         }
 
+
         [HttpPost("get-recommendations")]
-        public async Task<IActionResult> GetEC2Recommendations([FromBody] RequestModel requestModel)
+        public async Task<IActionResult> GetEC2Recommendations([FromQuery] string AWSAccessKey, [FromQuery] string AWSSecretKey, [FromQuery] string Region, [FromQuery] string AccountId)
         {
             try
             {
-                var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
+                var ec2Client = new AmazonEC2Client(AWSAccessKey, AWSSecretKey, RegionEndpoint.GetBySystemName(Region));
 
                 var instanceId = await GetInstanceIdsAsync(ec2Client);
 
 
-                var computeOptimizerClient = new AmazonComputeOptimizerClient(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
+                var computeOptimizerClient = new AmazonComputeOptimizerClient(AWSAccessKey, AWSSecretKey, RegionEndpoint.GetBySystemName(Region));
 
                 var getRecommendationsRequest = new GetEC2InstanceRecommendationsRequest
                 {
-                    InstanceArns = new List<string> { $"arn:aws:ec2:{requestModel.Region}:{requestModel.AccountId}:instance/{instanceId}" }
+                    InstanceArns = new List<string> { $"arn:aws:ec2:{Region}:{AccountId}:instance/{instanceId}" }
                 };
 
                 var recommendationsResponse = await computeOptimizerClient.GetEC2InstanceRecommendationsAsync(getRecommendationsRequest);
@@ -614,6 +551,49 @@ namespace Apistart_stop.Controllers
 
             var scheduledInstanceIds = instanceIds.Take(2).ToList();
             return scheduledInstanceIds;
+        }
+        [HttpPost("lock-instances")]
+        public async Task<IActionResult> LockInstances([FromQuery] string AWSAccessKey, [FromQuery] string AWSSecretKey, [FromQuery] string Region, [FromQuery] string InstanceID)
+        {
+            try
+            {
+                var ec2Client = new AmazonEC2Client(AWSAccessKey, AWSSecretKey, RegionEndpoint.GetBySystemName(Region));
+
+                var request = new DescribeInstancesRequest();
+                var response = await ec2Client.DescribeInstancesAsync(request);
+
+                var instanceIds = new List<string>();
+                foreach (var reservation in response.Reservations)
+                {
+                    foreach (var instance in reservation.Instances)
+                    {
+                        instanceIds.Add(instance.InstanceId);
+                    }
+                }
+
+                // Tag instances to indicate they are "locked"
+                var tagRequest = new CreateTagsRequest
+                {
+                    Resources = instanceIds,
+                    Tags = new List<Amazon.EC2.Model.Tag>
+    {
+        new Amazon.EC2.Model.Tag
+        {
+            Key = "LockStatus",
+            Value = "Locked"
+        }
+    }
+                };
+
+                await ec2Client.CreateTagsAsync(tagRequest);
+
+                return Ok("Instances locked successfully.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error: {ex.Message}");
+                return BadRequest(ex.Message);
+            }
         }
 
 
