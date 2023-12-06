@@ -306,49 +306,49 @@ namespace Apistart_stop.Controllers
             return labeledInstanceIds;
         }
 
-        [HttpPost("start-rg-instances")]
-        public async Task<IActionResult> StartRGEC2Instances([FromBody] RequestModel requestModel)
-        {
-            try
-            {
-                var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
+        //[HttpPost("start-rg-instances")]
+        //public async Task<IActionResult> StartRGEC2Instances([FromBody] RequestModel requestModel)
+        //{
+        //    try
+        //    {
+        //        var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
 
-                var rgInstanceIds = await GetInstanceIdsInResourceGroupAsync(ec2Client, "YourResourceGroup");
-                await StartInstancesAsync(ec2Client, rgInstanceIds);
+        //        var rgInstanceIds = await GetInstanceIdsInResourceGroupAsync(ec2Client, "YourResourceGroup");
+        //        await StartInstancesAsync(ec2Client, rgInstanceIds);
 
-                return Ok("Instances in Resource Group started successfully.");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error: {ex.Message}");
-                return BadRequest(ex.Message);
-            }
-        }
+        //        return Ok("Instances in Resource Group started successfully.");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError($"Error: {ex.Message}");
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
 
-        private Task<List<string>> GetInstanceIdsInResourceGroupAsync(AmazonEC2Client ec2Client, string v)
-        {
-            throw new NotImplementedException();
-        }
+        //private Task<List<string>> GetInstanceIdsInResourceGroupAsync(AmazonEC2Client ec2Client, string v)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        [HttpPost("stop-rg-instances")]
-        public async Task<IActionResult> StopRGEC2Instances([FromBody] RequestModel requestModel)
-        {
-            try
-            {
-                var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
+        //[HttpPost("stop-rg-instances")]
+        //public async Task<IActionResult> StopRGEC2Instances([FromBody] RequestModel requestModel)
+        //{
+        //    try
+        //    {
+        //        var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
 
-                // RG Level: Implement RG-level scheduling logic
-                var rgInstanceIds = await GetInstanceIdsInResourceGroupAsync(ec2Client, "YourResourceGroup");
-                await StopInstancesAsync(ec2Client, rgInstanceIds);
+        //        // RG Level: Implement RG-level scheduling logic
+        //        var rgInstanceIds = await GetInstanceIdsInResourceGroupAsync(ec2Client, "YourResourceGroup");
+        //        await StopInstancesAsync(ec2Client, rgInstanceIds);
 
-                return Ok("Instances in Resource Group stopped successfully.");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error: {ex.Message}");
-                return BadRequest(ex.Message);
-            }
-        }
+        //        return Ok("Instances in Resource Group stopped successfully.");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError($"Error: {ex.Message}");
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
 
         [HttpPost("start-subscription-instances")]
         public async Task<IActionResult> StartSubscriptionEC2Instances([FromBody] RequestModel requestModel)
@@ -369,9 +369,21 @@ namespace Apistart_stop.Controllers
             }
         }
 
-        private Task<List<string>> GetAllInstanceIdsAsync(AmazonEC2Client ec2Client)
+        private async Task<List<string>> GetAllInstanceIdsAsync(AmazonEC2Client ec2Client)
         {
-            throw new NotImplementedException();
+            var request = new DescribeInstancesRequest();
+            var response = await ec2Client.DescribeInstancesAsync(request);
+
+            var allInstanceIds = new List<string>();
+            foreach (var reservation in response.Reservations)
+            {
+                foreach (var instance in reservation.Instances)
+                {
+                    allInstanceIds.Add(instance.InstanceId);
+                }
+            }
+
+            return allInstanceIds;
         }
 
         [HttpPost("stop-subscription-instances")]
@@ -381,7 +393,6 @@ namespace Apistart_stop.Controllers
             {
                 var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
 
-                // Subscription Level: Implement subscription-level scheduling logic
                 var allInstanceIds = await GetAllInstanceIdsAsync(ec2Client);
                 await StopInstancesAsync(ec2Client, allInstanceIds);
 
