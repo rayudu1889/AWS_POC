@@ -10,6 +10,7 @@
 
         public string ResourceGroup { get; set; }
         public string InstanceType { get; set; }
+        public string InstanceId { get; set; }
 
         
     }

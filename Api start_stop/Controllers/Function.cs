@@ -130,6 +130,52 @@ namespace Apistart_stop.Controllers
             }
         }
 
+        [HttpPost("start-instance")]
+        public async Task<IActionResult> StartEC2Instance([FromBody] RequestModel requestModel)
+        {
+            try
+            {
+                var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
+
+                var request = new StartInstancesRequest
+                {
+                    InstanceIds = new List<string> { requestModel.InstanceId }
+                };
+
+                var response = await ec2Client.StartInstancesAsync(request);
+
+                return Ok(response.StartingInstances);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error: {ex.Message}");
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("stop-instance")]
+        public async Task<IActionResult> StopEC2Instance([FromBody] RequestModel requestModel)
+        {
+            try
+            {
+                var ec2Client = new AmazonEC2Client(requestModel.AWSAccessKey, requestModel.AWSSecretKey, RegionEndpoint.GetBySystemName(requestModel.Region));
+
+                var request = new StopInstancesRequest
+                {
+                    InstanceIds = new List<string> { requestModel.InstanceId }
+                };
+
+                var response = await ec2Client.StopInstancesAsync(request);
+
+                return Ok(response.StoppingInstances);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error: {ex.Message}");
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPost("ResizeAllInstances")]
         public async Task<IActionResult> ResizeAllEC2Instances([FromBody] RequestModel model)
         {
