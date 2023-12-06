@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Kalibr8\\Kalibr8Aws_Pocs\\Api start_stop\\Api start_stop.csproj": {}
+    "D:\\Kalibr8\\AWS_POC\\Api start_stop\\Api start_stop.csproj": {}
   },
   "projects": {
-    "D:\\Kalibr8\\Kalibr8Aws_Pocs\\Api start_stop\\Api start_stop.csproj": {
+    "D:\\Kalibr8\\AWS_POC\\Api start_stop\\Api start_stop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kalibr8\\Kalibr8Aws_Pocs\\Api start_stop\\Api start_stop.csproj",
+        "projectUniqueName": "D:\\Kalibr8\\AWS_POC\\Api start_stop\\Api start_stop.csproj",
         "projectName": "Api start_stop",
-        "projectPath": "D:\\Kalibr8\\Kalibr8Aws_Pocs\\Api start_stop\\Api start_stop.csproj",
+        "projectPath": "D:\\Kalibr8\\AWS_POC\\Api start_stop\\Api start_stop.csproj",
         "packagesPath": "C:\\Users\\saira\\.nuget\\packages\\",
-        "outputPath": "D:\\Kalibr8\\Kalibr8Aws_Pocs\\Api start_stop\\obj\\",
+        "outputPath": "D:\\Kalibr8\\AWS_POC\\Api start_stop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

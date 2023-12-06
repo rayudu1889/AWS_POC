@@ -90,3 +90,49 @@ D:\Kalibr8\Kalibr8Aws_Pocs\Api start_stop\obj\Debug\net6.0\refint\Api start_stop
 D:\Kalibr8\Kalibr8Aws_Pocs\Api start_stop\obj\Debug\net6.0\Api start_stop.pdb
 D:\Kalibr8\Kalibr8Aws_Pocs\Api start_stop\obj\Debug\net6.0\Api start_stop.genruntimeconfig.cache
 D:\Kalibr8\Kalibr8Aws_Pocs\Api start_stop\obj\Debug\net6.0\ref\Api start_stop.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\appsettings.Development.json
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\appsettings.json
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Api start_stop.exe
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Api start_stop.deps.json
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Api start_stop.runtimeconfig.json
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Api start_stop.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Api start_stop.pdb
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\AWSSDK.Core.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\AWSSDK.EC2.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\AWSSDK.Extensions.NETCore.Setup.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Kalibr8\AWS_POC\Api start_stop\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\Api start_stop.csproj.AssemblyReference.cache
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\Api start_stop.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\Api start_stop.AssemblyInfoInputs.cache
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\Api start_stop.AssemblyInfo.cs
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\Api start_stop.csproj.CoreCompileInputs.cache
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\Api start_stop.MvcApplicationPartsAssemblyInfo.cs
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\Api start_stop.MvcApplicationPartsAssemblyInfo.cache
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\staticwebassets\msbuild.Api start_stop.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\staticwebassets\msbuild.build.Api start_stop.props
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Api start_stop.props
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Api start_stop.props
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\staticwebassets.build.json
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\staticwebassets.development.json
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\scopedcss\bundle\Api start_stop.styles.css
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\Api start_stop.csproj.CopyComplete
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\Api start_stop.dll
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\refint\Api start_stop.dll
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\Api start_stop.pdb
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\Api start_stop.genruntimeconfig.cache
+D:\Kalibr8\AWS_POC\Api start_stop\obj\Debug\net6.0\ref\Api start_stop.dll
